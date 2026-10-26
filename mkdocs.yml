@@ -1,12 +1,12 @@
-site_name: Работа в IT — handbook 2026
-site_description: Практическое руководство по поиску работы в IT в России — от выбора цели до проверки оффера.
+site_name: Поиск работы Frontend-разработчиком — IT-ПАРК
+site_description: "Практическая методичка для выпускников Web-курса IT-ПАРК: от резюме и портфолио до собеседований и оффера."
 exclude_docs: |
   !/templates/
-site_url: https://1ommys.github.io/itp-work-handbook/
-repo_name: 1ommyS/itp-work-handbook
-repo_url: https://github.com/1ommyS/itp-work-handbook
+site_url: https://itpark32.github.io/web-14-job-offer/
+repo_name: itpark32/web-14-job-offer
+repo_url: https://github.com/itpark32/web-14-job-offer
 edit_uri: edit/main/docs/
-copyright: Материалы проверены 6 сентября 2026 года. Даты источников указаны в тексте.
+copyright: IT-ПАРК · Редакция 26 октября 2026 · Источники и ограничения указаны в тексте.
 
 theme:
   name: material
@@ -94,40 +94,42 @@ validation:
     absolute_links: warn
 
 nav:
-  - Начало: index.md
-  - Стратегия:
-      - Рынок России в 2026 году: getting-started/market-2026.md
-      - Цель и выбор работодателя: getting-started/target.md
-      - План поиска работы: getting-started/plan.md
-      - Без коммерческого опыта: getting-started/no-experience.md
-  - Резюме и профиль:
-      - Резюме для российского рынка: resume/resume.md
+  - Начало:
+      - Как пользоваться handbook: index.md
+      - Связь с Web-методичкой: about.md
+  - Старт поиска:
+      - Рынок Junior Frontend в 2026 году: getting-started/market-2026.md
+      - Целевая роль: getting-started/target.md
+      - Первая работа без опыта: getting-started/no-experience.md
+      - Первая неделя поиска: getting-started/plan.md
+  - Материалы кандидата:
+      - Резюме Frontend-разработчика: resume/resume.md
       - Примеры формулировок: resume/examples.md
-      - Профиль и портфолио: resume/profile.md
+      - GitHub-профиль: resume/profile.md
+      - Портфолио: resume/portfolio.md
+      - Учебный проект → портфолио: resume/project-to-portfolio.md
+      - Live demo: resume/live-demo.md
   - Поиск вакансий:
-      - Каналы поиска: job-search/channels.md
-      - Отклики и воронка: job-search/applications.md
+      - Где искать: job-search/channels.md
+      - Как читать вакансию и выбирать отклики: job-search/read-vacancy.md
+      - Отклики и job tracker: job-search/applications.md
       - Общение с рекрутером: job-search/recruiter.md
+      - Follow-up: job-search/follow-up.md
       - Отказы и диагностика: job-search/rejections.md
   - Собеседования:
-      - Этапы найма: interviews/process.md
+      - Как устроен найм: interviews/process.md
+      - Подготовка к ближайшему этапу: technical/developer.md
+      - Как рассказать о проекте: interviews/project.md
+      - Live coding: interviews/live-coding.md
+      - Code review: interviews/code-review.md
+      - Debugging: interviews/debugging.md
+      - Верстка на интервью: interviews/layout.md
+      - Тестовое задание: interviews/test-assignment.md
       - Поведенческое интервью: interviews/behavioral.md
       - Вопросы компании: interviews/company.md
-  - Практикум собеседований:
-      - Как работать с базой: interview-bank/index.md
-      - Java — 240 вопросов:
-          - Карта раздела: interview-bank/java.md
-          - 1–80 · Java Core: interview-bank/java-core.md
-          - 81–160 · JVM и Concurrency: interview-bank/java-runtime.md
-          - 161–240 · Spring, Data, Architecture: interview-bank/java-ecosystem.md
-      - 50 задач LeetCode: interview-bank/leetcode-50.md
-  - Техническая подготовка:
-      - Разработчикам: technical/developer.md
-      - Алгоритмы и live coding: technical/algorithms.md
-      - System Design по уровням: technical/system-design.md
-      - QA, аналитика, DevOps, дизайн и продукт: technical/roles.md
   - Зарплата и оффер:
-      - Ожидания и переговоры: salary/negotiation.md
+      - Зарплатные ожидания: salary/expectations.md
+      - Переговоры: salary/negotiation.md
       - Проверка оффера: salary/offer.md
   - Шаблоны: templates/index.md
   - Источники: resources/sources.md
