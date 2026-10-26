@@ -51,28 +51,18 @@ def check_source() -> list[str]:
         if re.search(r"^\s*(?:TODO|TBD|WIP|ЗАГЛУШКА)(?:\b|:)", source, flags=re.MULTILINE):
             errors.append(f"Unfinished content marker: {path}")
 
-    java_ranges = {
-        "interview-bank/java-core.md": range(1, 81),
-        "interview-bank/java-runtime.md": range(81, 161),
-        "interview-bank/java-ecosystem.md": range(161, 241),
+    # Removed technical banks must not silently return to the published search index.
+    if (docs / "interview-bank").exists():
+        errors.append("Obsolete interview bank must not be published")
+    required = {
+        "resume/project-to-portfolio.md", "resume/live-demo.md", "resume/portfolio.md",
+        "interviews/project.md", "interviews/live-coding.md", "interviews/code-review.md",
+        "interviews/debugging.md", "interviews/layout.md", "interviews/test-assignment.md",
+        "job-search/read-vacancy.md", "technical/developer.md",
     }
-    for path, expected in java_ranges.items():
-        page = docs / path
-        if not page.is_file():
-            continue
-        numbers = [int(value) for value in re.findall(
-            r"^\*\*(\d+)\.", page.read_text(encoding="utf-8"), flags=re.MULTILINE
-        )]
-        if numbers != list(expected):
-            errors.append(f"Java question numbering is incomplete in {path}")
+    for path in sorted(required - actual):
+        errors.append(f"Required frontend career page is missing: {path}")
 
-    leetcode = docs / "interview-bank/leetcode-50.md"
-    if leetcode.is_file():
-        slugs = re.findall(
-            r"https://leetcode\.com/problems/([^/]+)/", leetcode.read_text(encoding="utf-8")
-        )
-        if len(slugs) != 50 or len(set(slugs)) != 50:
-            errors.append("LeetCode collection must contain 50 unique problem links")
     print(f"Checked {len(actual)} source pages and {len(paths)} navigation entries.")
     return errors
 
